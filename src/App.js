@@ -1,10 +1,10 @@
 import "./App.css";
-import Pomodoro from "./Pomodoro";
+import PomoBox from "./PomoBox.js";
 
 function App() {
   return (
     <div className="App">
-      <Pomodoro />
+      <PomoBox />
     </div>
   );
 }

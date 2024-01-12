@@ -1,25 +1,27 @@
-// PausePlay.js
-import React, { useState } from "react";
+import React from "react";
 import "./PausePlay.css";
 
-function PausePlay() {
-  const [isRunning, setIsRunning] = useState(false);
+function PausePlay(props) {
+  let setIsRunning = props.running;
 
   const startTimer = () => {
-    setIsRunning(true);
+    setIsRunning(false);
   };
 
   const pauseTimer = () => {
-    setIsRunning(false);
+    setIsRunning(true);
   };
 
   return (
     <div className="PausePlay">
-      <i onClick={pauseTimer} className="fa-regular fa-circle-pause fa-2xs"></i>
+      <i
+        onClick={pauseTimer}
+        className="pp fa-regular fa-circle-play fa-2xs me-4"
+      ></i>
 
       <i
         onClick={startTimer}
-        className="fa-regular fa-circle-play fa-2xs me-4"
+        className="pp fa-regular fa-circle-pause fa-2xs "
       ></i>
     </div>
   );
