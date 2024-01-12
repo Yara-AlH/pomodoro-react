@@ -1,19 +1,16 @@
 import React from "react";
-import Timer from "./Timer";
+import PomoBox from "./PomoBox.js";
 import "./Pomodoro.css";
+import PausePlay from "./PausePlay.js";
+import { TimerProvider } from "./Context.js";
 
 function Pomodoro() {
   return (
     <div className="pomodoro">
-      <main>
-        <div className="container pomo-body">
-          <div className="timer-wrapper">
-            <div className="ticker">
-              <Timer />
-            </div>
-          </div>
-        </div>
-      </main>
+      <TimerProvider>
+        <PomoBox />
+        <PausePlay />
+      </TimerProvider>
     </div>
   );
 }

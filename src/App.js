@@ -4,9 +4,7 @@ import Pomodoro from "./Pomodoro";
 function App() {
   return (
     <div className="App">
-      <div className="container">
-        <Pomodoro />
-      </div>
+      <Pomodoro />
     </div>
   );
 }

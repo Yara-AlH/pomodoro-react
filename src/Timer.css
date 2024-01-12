@@ -1,12 +1,12 @@
-.timer {
-  margin-top: 80px;
-}
-
 .pomodoro {
   font-size: 100px;
   text-align: center;
+  color: #2c1557;
 }
 
 .message {
   font-size: 27px;
+  color: #2c1557;;
 }
+
+
