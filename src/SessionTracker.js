@@ -7,11 +7,17 @@ function SessionTracker(props) {
   let breaks = [];
 
   for (let i = 0; i < totalNumberOfBreaks; i++) {
-    // let circleType = "fa-circle";
+    const isChecked = i < currentBreakNumber;
 
     breaks.push(
       <div className="col indicator ">
-        <i className="fa-regular fa-circle fa-2xs me-2"></i>
+        <i
+          className={`${
+            isChecked
+              ? "fa-regular fa-circle-check fa-2xs me-2"
+              : "fa-regular fa-circle fa-2xs me-2"
+          }`}
+        ></i>
       </div>
     );
   }
