@@ -10,12 +10,12 @@ function SessionTracker(props) {
     const isChecked = i < currentBreakNumber;
 
     breaks.push(
-      <div className="col indicator ">
+      <div className="col indicators  ">
         <i
           className={`${
             isChecked
-              ? "fa-regular fa-circle-check fa-2xs me-2"
-              : "fa-regular fa-circle fa-2xs me-2"
+              ? "fa-regular fa-circle-check fa-2xs me-2 "
+              : "fa-regular fa-circle fa-2xs me-2  "
           }`}
         ></i>
       </div>
@@ -23,7 +23,7 @@ function SessionTracker(props) {
   }
   return (
     <div className="SessionTracker">
-      <div className="row mt-5">{breaks}</div>
+      <div className="row ">{breaks}</div>
     </div>
   );
 }

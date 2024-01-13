@@ -1,0 +1,19 @@
+.signature {
+    font-family: 'Gochi Hand';    
+    font-size: 20px;
+    color: white;
+    width: 280px;
+    display: block;
+    margin: 0 auto
+    ;
+}
+
+
+.my-name {
+    color: white;
+    text-decoration: none;
+}
+
+.my-name:hover { 
+    text-decoration: underline;
+}

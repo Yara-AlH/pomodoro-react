@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Timer from "./Timer.js";
 import SessionTracker from "./SessionTracker.js";
-import PausePlay from "./PausePlay.js";
-import Music from "./Music.js";
+import Controls from "./Controls.js";
 import "./PomoBox.css";
 
 function PomoBox() {
@@ -12,6 +11,7 @@ function PomoBox() {
   const [inSession, setInSession] = useState(true);
   const [isRunning, setIsRunning] = useState(false);
   const [currentBreakNumber, setCurrentBreakNumber] = useState(0);
+  const [currentSessionNumber, setCurrentSessionNumber] = useState(0);
 
   function startSession() {
     setInSession(true);
@@ -19,6 +19,7 @@ function PomoBox() {
     setSeconds(59);
     setMinutes(newMinutes);
     setMode("Focus");
+
     if (currentBreakNumber === 4) {
       setCurrentBreakNumber(0);
     }
@@ -36,6 +37,7 @@ function PomoBox() {
     setMinutes(newMinutes);
     setMode("Rest");
     setCurrentBreakNumber(currentBreakNumber + 1);
+    setCurrentSessionNumber(currentSessionNumber + 1);
   }
 
   function startLongBreak() {
@@ -45,7 +47,18 @@ function PomoBox() {
     setMinutes(newMinutes);
     setMode("Long Break");
     setCurrentBreakNumber(currentBreakNumber + 1);
+    setCurrentSessionNumber(currentSessionNumber + 1);
   }
+
+  const reset = () => {
+    setMinutes(25);
+    setSeconds(0);
+    setMode("Focus");
+    setInSession(true);
+    setIsRunning(false);
+    setCurrentBreakNumber(0);
+    setCurrentSessionNumber(0);
+  };
 
   useEffect(() => {
     let interval;
@@ -72,17 +85,20 @@ function PomoBox() {
     }
 
     return () => clearInterval(interval);
-  }, [isRunning, seconds, minutes, inSession, currentBreakNumber]);
+  });
 
   return (
     <div className="PomoBox">
-      <div className="in-box">
-        <Music />
-        <Timer time={{ minutes, seconds, inSession, mode }} />
-        <SessionTracker breakNumber={currentBreakNumber} />
-      </div>
-      <div className="out-box">
-        <PausePlay running={(isRunning, setIsRunning)} />
+      <div className="container">
+        <div className="in-box">
+          <h3>React Pomodoro Timer</h3>
+          <Timer time={{ minutes, seconds, inSession, mode }} />
+          <div className="pomo-counter"> #{currentSessionNumber}</div>
+          <SessionTracker breakNumber={currentBreakNumber} />
+        </div>
+        <div className="out-box">
+          <Controls resetPomo={reset} running={(isRunning, setIsRunning)} />
+        </div>
       </div>
     </div>
   );

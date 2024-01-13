@@ -1,8 +1,8 @@
-.indicator {
-    font-size: 60px;
+.indicators {
+    font-size: 70px;
     border-radius: 50%;
 
+    /* box-shadow: 2px 8px 34px 5px rgba(255,255,255,0.75);
+    -webkit-box-shadow: 2px 8px 34px 5px rgba(255,255,255,0.75);
+    -moz-box-shadow: 2px 8px 34px 5px rgba(255,255,255,0.75); */
 }
-
-
-

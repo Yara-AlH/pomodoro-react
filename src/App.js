@@ -3,7 +3,7 @@ import PomoBox from "./PomoBox.js";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <PomoBox />
     </div>
   );

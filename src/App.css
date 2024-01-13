@@ -1,14 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 body {
-  background-color: #BFBFBF !important;
- color: #282828 !important;
-  font-family: "Roboto Mono", monospace;
- padding: 50px;
+  background-color: #434e5ce4 !important;
+  padding: 50px;
+  font-family: 'Quicksand', sans-serif !important; 
 }
 
-/* .App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */

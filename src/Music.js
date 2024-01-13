@@ -3,7 +3,7 @@ import "./Music.css";
 
 function Music() {
   return (
-    <div className="music">
+    <div className="music ">
       <iframe
         title="spotify"
         style={{ borderRadius: 12 }}
