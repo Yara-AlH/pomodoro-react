@@ -1,7 +1,7 @@
 import React from "react";
-import "./PausePlay.css";
+import "./Controls.css";
 
-function PausePlay(props) {
+function Controls(props) {
   let setIsRunning = props.running;
   let reset = props.resetPomo;
 
@@ -14,7 +14,7 @@ function PausePlay(props) {
   };
 
   return (
-    <div className="PausePlay">
+    <div className="controls">
       <i onClick={startTimer} className="pp fa-solid fa-pause fa-2xs me-4 "></i>
 
       <i onClick={pauseTimer} className="pp fa-solid fa-play fa-2xs me-3"></i>
@@ -27,4 +27,4 @@ function PausePlay(props) {
   );
 }
 
-export default PausePlay;
+export default Controls;
