@@ -3,9 +3,15 @@ import Timer from "./Timer.js";
 import SessionTracker from "./SessionTracker.js";
 import Controls from "./Controls.js";
 import "./PomoBox.css";
+import { SettingsContext } from "./SettingsProvider.js";
 
 function PomoBox() {
-  const [minutes, setMinutes] = useState(25);
+  const { settings, setSettings } = React.useContext(SettingsContext);
+  let pomoMinutes = settings.pomodoro;
+  let shortPomoBreak = settings.shortBreak;
+  let longPomoBreak = settings.longBreak;
+
+  const [minutes, setMinutes] = useState(pomoMinutes);
   const [seconds, setSeconds] = useState(0);
   const [mode, setMode] = useState("Focus");
   const [inSession, setInSession] = useState(true);
@@ -13,9 +19,13 @@ function PomoBox() {
   const [currentBreakNumber, setCurrentBreakNumber] = useState(0);
   const [currentSessionNumber, setCurrentSessionNumber] = useState(0);
 
+  useEffect(() => {
+    setMinutes(pomoMinutes);
+  }, [settings, pomoMinutes]);
+
   function startSession() {
     setInSession(true);
-    let newMinutes = 24;
+    let newMinutes = pomoMinutes - 1;
     setSeconds(59);
     setMinutes(newMinutes);
     setMode("Focus");
@@ -32,7 +42,7 @@ function PomoBox() {
     }
 
     setInSession(false);
-    let newMinutes = 4;
+    let newMinutes = shortPomoBreak - 1;
     setSeconds(59);
     setMinutes(newMinutes);
     setMode("Rest");
@@ -42,7 +52,7 @@ function PomoBox() {
 
   function startLongBreak() {
     setInSession(false);
-    let newMinutes = 14;
+    let newMinutes = longPomoBreak - 1;
     setSeconds(59);
     setMinutes(newMinutes);
     setMode("Long Break");
@@ -51,7 +61,7 @@ function PomoBox() {
   }
 
   const reset = () => {
-    setMinutes(25);
+    setMinutes(pomoMinutes);
     setSeconds(0);
     setMode("Focus");
     setInSession(true);
