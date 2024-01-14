@@ -3,4 +3,18 @@
   font-size: 27px;
 }
 
+@media (max-width:430px) {
+  .timer {
+    font-size: 60px;
+  }
+}
+
+@media (max-width:374px) {
+  .timer {
+    font-size: 40px !important
+  }
+}
+
+
+
 

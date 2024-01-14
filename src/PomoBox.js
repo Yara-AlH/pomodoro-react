@@ -89,16 +89,14 @@ function PomoBox() {
 
   return (
     <div className="PomoBox">
-      <div className="container">
-        <div className="in-box">
-          <h3>React Pomodoro Timer</h3>
-          <Timer time={{ minutes, seconds, inSession, mode }} />
-          <div className="pomo-counter"> #{currentSessionNumber}</div>
-          <SessionTracker breakNumber={currentBreakNumber} />
-        </div>
-        <div className="out-box">
-          <Controls resetPomo={reset} running={(isRunning, setIsRunning)} />
-        </div>
+      <div className="in-box">
+        <h3>React Pomodoro Timer</h3>
+        <Timer time={{ minutes, seconds, inSession, mode }} />
+        <div className="pomo-counter"> #{currentSessionNumber}</div>
+        <SessionTracker breakNumber={currentBreakNumber} />
+      </div>
+      <div className="out-box">
+        <Controls resetPomo={reset} running={(isRunning, setIsRunning)} />
       </div>
     </div>
   );
