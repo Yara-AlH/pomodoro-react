@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import { SettingsContext } from "./SettingsProvider.js";
 
 function Customize() {
-  const { settings, setSettings } = React.useContext(SettingsContext);
+  const { setSettings } = React.useContext(SettingsContext);
 
   const [show, setShow] = useState(false);
   const [pomodoro, setPomodoro] = useState("");
@@ -25,6 +25,8 @@ function Customize() {
       shortBreak,
       longBreak,
     });
+
+    handleClose();
   }
 
   return (

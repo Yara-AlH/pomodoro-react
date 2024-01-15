@@ -6,7 +6,7 @@ import "./PomoBox.css";
 import { SettingsContext } from "./SettingsProvider.js";
 
 function PomoBox() {
-  const { settings, setSettings } = React.useContext(SettingsContext);
+  const { settings } = React.useContext(SettingsContext);
   let pomoMinutes = settings.pomodoro;
   let shortPomoBreak = settings.shortBreak;
   let longPomoBreak = settings.longBreak;
