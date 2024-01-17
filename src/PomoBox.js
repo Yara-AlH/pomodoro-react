@@ -4,6 +4,7 @@ import SessionTracker from "./SessionTracker.js";
 import Controls from "./Controls.js";
 import "./PomoBox.css";
 import { SettingsContext } from "./SettingsProvider.js";
+import sound from "./sounds/timesUp.wav";
 
 function PomoBox() {
   const { settings } = React.useContext(SettingsContext);
@@ -21,6 +22,7 @@ function PomoBox() {
 
   useEffect(() => {
     setMinutes(pomoMinutes);
+    setSeconds(0);
   }, [settings, pomoMinutes]);
 
   function startSession() {
@@ -70,17 +72,29 @@ function PomoBox() {
     setCurrentSessionNumber(0);
   };
 
+  function playSound() {
+    new Audio(sound).play();
+  }
+
   useEffect(() => {
     let interval;
 
     if (isRunning) {
       interval = setInterval(() => {
+        if (minutes === 0 && seconds === 1) {
+          playSound();
+        }
+
         if (seconds === 0) {
           if (minutes === 0) {
             if (inSession) {
-              startBreak();
+              setTimeout(() => {
+                startBreak();
+              }, 1100);
             } else {
-              startSession();
+              setTimeout(() => {
+                startSession();
+              }, 1100);
             }
             return;
           }

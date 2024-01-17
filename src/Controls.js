@@ -1,5 +1,6 @@
 import React from "react";
 import "./Controls.css";
+import sound from "./sounds/sound.wav";
 
 function Controls(props) {
   let setIsRunning = props.running;
@@ -13,11 +14,27 @@ function Controls(props) {
     setIsRunning(true);
   };
 
+  const playSound = () => {
+    new Audio(sound).play();
+  };
+
   return (
     <div className="controls">
-      <i onClick={startTimer} className="pp fa-solid fa-pause fa-2xs me-4 "></i>
+      <i
+        onClick={() => {
+          startTimer();
+          playSound();
+        }}
+        className="pp fa-solid fa-pause fa-2xs me-4 "
+      ></i>
 
-      <i onClick={pauseTimer} className="pp fa-solid fa-play fa-2xs me-3"></i>
+      <i
+        onClick={() => {
+          pauseTimer();
+          playSound();
+        }}
+        className="pp fa-solid fa-play fa-2xs me-3"
+      ></i>
 
       <i
         onClick={reset}
