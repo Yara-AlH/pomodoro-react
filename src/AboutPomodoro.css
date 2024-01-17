@@ -1,0 +1,51 @@
+.aboutPomodoro {
+    background-color: white;
+    padding: 60px  0;
+    line-height: 2 ;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 800px !important;
+}
+
+ul{
+    list-style-type: decimal;
+}
+
+ul li::marker {
+    font-weight: 550;
+}
+
+.underliner {
+    border: 2px solid #118a7e;
+    width: 30px;
+}
+
+.wikiLink {
+    text-decoration: none;
+    color: #118a7e ;
+    font-weight: bold;
+}
+
+.wikiLink:hover{
+    cursor: pointer;
+}
+
+.dark-green {
+    color: #09322d;
+}
+
+.line {
+    border: 1px solid #56606d1f;
+}
+
+.reach{
+    transition: transform 300ms ease-in-out;
+
+}
+
+.reach:hover {
+ cursor: pointer;
+ transform: translate(0px, 0px) scale(1.1, 1.1);
+}

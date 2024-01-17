@@ -114,6 +114,7 @@ function PomoBox() {
   return (
     <div className="PomoBox">
       <div className="in-box">
+        <i className="fa-solid fa-ellipsis customize"></i>
         <h3>React Pomodoro Timer</h3>
         <Timer time={{ minutes, seconds, inSession, mode }} />
         <div className="pomo-counter"> #{currentSessionNumber}</div>
