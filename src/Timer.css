@@ -1,6 +1,10 @@
+.timer {
+  font-weight: bold;
+}
 
 .message {
   font-size: 27px;
+  font-weight: lighter;
 }
 
 @media (max-width:430px) {

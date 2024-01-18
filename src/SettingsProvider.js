@@ -6,7 +6,7 @@ function SettingsProvider({ children }) {
   const [settings, setSettings] = React.useState({
     pomodoro: 25,
     shortBreak: 5,
-    longBreak: 15,
+    longBreak: 20,
   });
 
   return (

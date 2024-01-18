@@ -21,12 +21,20 @@ function Customize() {
 
   function handleSaveButtonClick(event) {
     event.preventDefault();
+
+    if (!pomodoro.trim() || !shortBreak.trim() || !longBreak.trim()) {
+      return;
+    }
+
     setSettings({
       pomodoro,
       shortBreak,
       longBreak,
     });
 
+    setPomodoro("");
+    setShotBreak("");
+    setLongBreak("");
     handleClose();
   }
 
@@ -34,16 +42,15 @@ function Customize() {
     <div className="customize">
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Enter custome timer:</Modal.Title>
+          <Modal.Title className="fw-bold">Enter custome timer:</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>
-            <label className="form-label fw-bold"> POMODORO</label>
+            <label className="form-label fw-bold">POMODORO</label>
             <input
               type="text"
+              required
               className="form-control"
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm"
               value={pomodoro}
               onChange={(event) => {
                 setPomodoro(event.target.value);
@@ -52,9 +59,8 @@ function Customize() {
             <label className="form-label fw-bold mt-3"> SHORT BREAK</label>
             <input
               type="text"
+              required
               className="form-control"
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm"
               value={shortBreak}
               onChange={(event) => {
                 setShotBreak(event.target.value);
@@ -63,21 +69,21 @@ function Customize() {
             <label className="form-label fw-bold mt-3"> LONG BREAK</label>
             <input
               type="text"
+              required
               className="form-control"
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm"
               value={longBreak}
               onChange={(event) => {
                 setLongBreak(event.target.value);
               }}
             ></input>
+            <button
+              type="submit"
+              className="btn btn-secondary d-block ms-auto mt-4"
+              onClick={handleSaveButtonClick}
+            >
+              SAVE
+            </button>
           </form>
-          <button
-            className="btn btn-secondary d-block ms-auto mt-4"
-            onClick={handleSaveButtonClick}
-          >
-            SAVE
-          </button>
         </Modal.Body>
       </Modal>
 
