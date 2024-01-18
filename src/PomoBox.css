@@ -1,26 +1,25 @@
 .PomoBox {
-padding: 20px;  
-
+padding: 60px;  
+background-color: #09322df3;
+color: white;
 }
 
 .in-box{
+  position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
     text-align: center;
-    background: linear-gradient(60deg, #29323c 0%, #485563 100%);
-    border-radius: 20px;
+    background: linear-gradient(60deg, #29323c90 0%, #485563ce 100%);
+    border-radius: 50%;
     color: white;
     box-shadow: 0 2.8px 2.2px rgba(0,0,0,.034), 0 6.7px 5.3px rgba(0,0,0,.048), 0 12.5px 10px rgba(0,0,0,.06), 0 22.3px 17.9px rgba(0,0,0,.072), -2px 17px 33.4px rgba(0,0,0,.086), 1px 7px 20px 2px rgba(0,0,0,.12);
-
-    max-width: 400px;
+    max-width: 500px;
     height: 500px ;
     font-size: 100px;
   }
-
-  
 
   .out-box {
     display: flex;
@@ -38,7 +37,7 @@ padding: 20px;
   }
 
   .pomo-counter {
-  font-size: 12px;
+  font-size: 16px;
   }
 
   h3 {
@@ -70,6 +69,4 @@ padding: 20px;
     }
   }
 
-  .customize {
-    font-size: 25px;
-  }
+ 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { SettingsContext } from "./SettingsProvider.js";
+import "./Customize.css";
 
 function Customize() {
   const { setSettings } = React.useContext(SettingsContext);
@@ -80,12 +81,7 @@ function Customize() {
         </Modal.Body>
       </Modal>
 
-      <button
-        className="btn btn-outline-secondary text-light"
-        onClick={handleShow}
-      >
-        CUSTOMIZE
-      </button>
+      <i className="fa-solid fa-gear customize" onClick={handleShow}></i>
     </div>
   );
 }

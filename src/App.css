@@ -1,6 +1,8 @@
 
 body {
-  background-color: #434e5ce4 !important;
   font-family: 'Quicksand', sans-serif !important; 
+  padding: 15px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(./sounds/academia.jpg);  
+  
 }
 

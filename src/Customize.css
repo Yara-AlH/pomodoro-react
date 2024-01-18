@@ -1,0 +1,14 @@
+.customize {
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform 300ms ease-in-out;
+
+}
+
+.customize:hover{
+    cursor: pointer;
+    transform: translate(1.1px, 0px) scale(1.1, 1.1);
+
+}
